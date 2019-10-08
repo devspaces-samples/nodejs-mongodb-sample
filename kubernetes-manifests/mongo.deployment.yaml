@@ -9,7 +9,7 @@ metadata:
   labels:
     app: node-guestbook
     tier: db
-  name: mongodb-34-centos7
+  name: mongodb-34-rhel7
 spec:
   ports:
     - port: 27017
@@ -21,7 +21,7 @@ spec:
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: mongodb-34-centos7
+  name: mongodb-34-rhel7
   labels:
     app: node-guestbook
     tier: db
@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
         - name: mongo
-          image: centos/mongodb-34-centos7
+          image: registry.redhat.io/rhscl/mongodb-34-rhel7
           env:
             - name: MONGODB_USER
               value: user

@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: quay.io/eclipse/che-nodejs10-ubi:nightly
+        image: registry.redhat.io/codeready-workspaces/stacks-node-rhel8
         command: ['/bin/sh', '-c']
         args: ['cd /home && git clone https://github.com/che-samples/nodejs-mongodb-sample.git && cd nodejs-mongodb-sample/ && npm install && npm start']
         imagePullPolicy: Always
