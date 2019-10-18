@@ -1,3 +1,10 @@
+/*-----------------------------------------------------------------------------------------------
+ * Copyright (c) 2019 Red Hat, Inc. and others
+ * Licensed under the MIT License. See LICENSE file in the project root for license information.
+ *
+ * SPDX-License-Identifier: MIT
+ *-----------------------------------------------------------------------------------------------
+*/
 const Message = require('./messages')
 
 const getMessages = async () => {

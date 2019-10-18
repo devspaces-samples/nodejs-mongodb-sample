@@ -1,3 +1,10 @@
+/*-----------------------------------------------------------------------------------------------
+ * Copyright (c) 2019 Red Hat, Inc. and others
+ * Licensed under the MIT License. See LICENSE file in the project root for license information.
+ *
+ * SPDX-License-Identifier: MIT
+ *-----------------------------------------------------------------------------------------------
+*/
 const mongoose = require('mongoose')
 
 const mongoURI = "mongodb://user:password@mongodb-34-rhel7:27017/guestbook"
@@ -6,7 +13,7 @@ const db = mongoose.connection;
 
 db.on('disconnected', () => {
     console.error(`Disconnected: unable to reconnect to ${mongoURI}`)
-    throw new Error(`Disconnected: unable to reconnect to ${mongoURI}`) 
+    throw new Error(`Disconnected: unable to reconnect to ${mongoURI}`)
 })
 db.on('error', (err) => {
     console.error(`Unable to connect to ${mongoURI}: ${err}`);

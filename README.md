@@ -1,6 +1,8 @@
 # NodeJS-MongoDB-Sample
 A simple NodeJS web application which communicates with MongoDB. Useful for testing Eclipse Che Node workspace.
 
+This example was adapted from https://github.com/GoogleCloudPlatform/cloud-code-samples/tree/master/nodejs/nodejs-guestbook
+
 # MongoDB
 The application connects to the Mongo data base, so it should be configured with next parameters:
 - MongoDB user - <b>user</b>
