@@ -4,10 +4,7 @@
   "description": "Simple NodeJs application which communicates with Mongo data base",
   "repository": "https://github.com/che-samples/nodejs-mongodb-sample",
   "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "debug": "node --inspect=9229 app.js"
-  },
+  "scripts": {},
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
