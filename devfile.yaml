@@ -1,0 +1,52 @@
+schemaVersion: 2.1.0
+metadata:
+  name: nodejs-mongodb
+components:
+  - name: nodejs
+    container:
+      image: registry.redhat.io/codeready-workspaces/plugin-java8-rhel8
+      env:
+      # The values below are used to set up the environment for running the application
+        - name: SECRET
+          value: 220fd770-c028-480d-8f95-f84353c7d55a 
+        - name: NODE_ENV
+          value: production
+      endpoints:
+        - exposure: public
+          name: nodejs
+          targetPort: 8080
+      memoryLimit: 1G
+      mountSources: true
+  - name: mongo
+    container:
+      image: registry.redhat.io/rhscl/mongodb-36-rhel7:1-50
+      env:
+        - name: MONGODB_USER
+          value: user
+        - name: MONGODB_PASSWORD
+          value: password
+        - name: MONGODB_DATABASE
+          value: guestbook
+        - name: MONGODB_ADMIN_PASSWORD
+          value: password
+      endpoints:
+        - name: mongodb
+          exposure: internal
+          targetPort: 27017
+      memoryLimit: 512Mi
+      mountSources: false
+      volumeMounts:
+        - name: mongo-storage
+          path: /var/lib/mongodb/data
+  - name: mongo-storage
+    volume:
+      size: 1G
+commands:
+  - id: runapp
+    exec:
+      label: "Run the application"
+      component: nodejs
+      workingDir: ${PROJECTS_ROOT}/nodejs-mongodb-sample
+      commandLine: "npm install && node --inspect=9229 app.js"
+      group:
+        kind: run
