@@ -4,7 +4,7 @@ metadata:
 components:
   - name: nodejs
     container:
-      image: registry.redhat.io/codeready-workspaces/plugin-java8-rhel8
+      image: quay.io/devspaces/udi-rhel8:3.1
       env:
       # The values below are used to set up the environment for running the application
         - name: SECRET
