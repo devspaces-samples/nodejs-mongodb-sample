@@ -17,6 +17,12 @@ components:
           targetPort: 8080
       memoryLimit: 1G
       mountSources: true
+      volumeMounts:
+        - name: npm
+          path: /home/user/.npm
+  - name: npm
+    volume:
+      size: 1G
   - name: mongo
     container:
       image: registry.redhat.io/rhscl/mongodb-36-rhel7:1-50
