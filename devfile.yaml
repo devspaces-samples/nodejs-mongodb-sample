@@ -48,7 +48,7 @@ components:
     volume:
       size: 1G
 commands:
-  - id: runapp
+  - id: 1-run
     exec:
       label: "Run the application"
       component: nodejs
