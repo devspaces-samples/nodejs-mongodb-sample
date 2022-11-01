@@ -35,4 +35,5 @@ jobs:
           git remote set-url origin https://$GITHUB_TOKEN:x-oauth-basic@github.com/redhat-developer/devspaces.git
           sed -i -r -e "s@^Webhook triggered on: .+@Webhook triggered on: $(date) [$GITHUB_REPOSITORY] @" dependencies/che-devfile-registry/webhook_trigger.txt
           git commit -m "chore: update webhook_trigger.txt for $GITHUB_REPOSITORY @ $GITHUB_REF_NAME" dependencies/che-devfile-registry/webhook_trigger.txt
+          git pull origin "$GITHUB_REF_NAME" || true
           git push origin "$GITHUB_REF_NAME" 
