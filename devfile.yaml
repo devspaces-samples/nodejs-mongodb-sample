@@ -45,7 +45,7 @@ components:
       memoryLimit: '512Mi'
       memoryRequest: '256Mi'
       cpuLimit: '1'
-      cpuRequest: '250m'
+      cpuRequest: '0.25'
       mountSources: false
       volumeMounts:
         - name: mongo-storage
