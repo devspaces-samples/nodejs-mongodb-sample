@@ -15,7 +15,10 @@ components:
         - exposure: public
           name: nodejs
           targetPort: 8080
-      memoryLimit: 1G
+      memoryLimit: '1Gi'
+      memoryRequest: '512Mi'
+      cpuLimit: '2'
+      cpuRequest: '1'
       mountSources: true
       volumeMounts:
         - name: npm
@@ -39,7 +42,10 @@ components:
         - name: mongodb
           exposure: internal
           targetPort: 27017
-      memoryLimit: 512Mi
+      memoryLimit: '512Mi'
+      memoryRequest: '256Mi'
+      cpuLimit: '1'
+      cpuRequest: '0.25'
       mountSources: false
       volumeMounts:
         - name: mongo-storage
